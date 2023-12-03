@@ -297,12 +297,13 @@
         function send_api(event)
         {
             event.preventDefault()
+             const btn = document.getElementById("send_message")
             const name = document.querySelector("input[name='name']").value
             const email = document.querySelector("input[name='email']").value
             const number = document.querySelector("input[name='number']").value
             const message = document.querySelector("textarea[name='message']").value
             let jsonData = {name,email,number,message}
-
+             btn.value = 'Loading'
 
             axios.post(url.prod, jsonData, {
             headers: {
@@ -316,6 +317,8 @@
             .catch(error => {
                 alert("Gagal")
                 console.error('Error:', error);
+            }).finally(()=>{
+                btn.value = 'Send Message..'
             });
         }
     </script>
