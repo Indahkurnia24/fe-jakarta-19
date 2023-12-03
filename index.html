@@ -292,7 +292,7 @@
     <script>
         let url={
             dev: "http://localhost:3000/tabel",
-            prod: ""
+            prod: "https://magenta-caiman-boot.cyclic.app/"
         }
         function send_api(event)
         {
@@ -304,7 +304,7 @@
             let jsonData = {name,email,number,message}
 
 
-            axios.post(url.dev, jsonData, {
+            axios.post(url.prod, jsonData, {
             headers: {
                 'Content-Type': 'application/json',  
             }
